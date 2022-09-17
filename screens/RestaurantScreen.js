@@ -17,19 +17,19 @@ const RestaurantScreen = () => {
 
     const {
         params: {
-          id,
-          imgUrl,
-          title,
-          rating,
-          genre,
-          address,
-          short_description,
-          dishes,
-          long,
-          lat,
+            id,
+            imgUrl,
+            title,
+            rating,
+            genre,
+            address,
+            short_description,
+            dishes,
+            long,
+            lat,
         },
-      } = useRoute();
-    
+    } = useRoute();
+
     //   useEffect(() => {
     //     dispatch(
     //       setRestaurant({
@@ -46,12 +46,14 @@ const RestaurantScreen = () => {
     //       })
     //     );
     //   }, []);
-    
-      useLayoutEffect(() => {
+
+    useLayoutEffect(() => {
         navigation.setOptions({
-          headerShown: false,
+            headerShown: false,
         });
-      }, []);
+    }, []);
+
+    console.log(dishes[0].name);
 
     return (
         <ScrollView>
@@ -89,11 +91,11 @@ const RestaurantScreen = () => {
                     <Text className="text-gray-500 mt-2 pb-4">{short_description}</Text>
                 </View>
                 <TouchableOpacity className="flex-row items-center space-x-2 p-4 border-y border-gray-300">
-                    <QuestionMarkCircleIcon color="gray" opacity={0.6} size={20}/>
+                    <QuestionMarkCircleIcon color="gray" opacity={0.6} size={20} />
                     <Text className="pl-2 flex-1 text-md font-bold">
                         have a food allergy?
                     </Text>
-                    <ChevronRightIcon color="#00CCBB" opacity={0.6} size={20}/>
+                    <ChevronRightIcon color="#00CCBB" opacity={0.6} size={20} />
                 </TouchableOpacity>
             </View>
             <View>
@@ -102,7 +104,7 @@ const RestaurantScreen = () => {
                 </Text>
                 {/* Dish Rows */}
                 {dishes.map((dish) => (
-                    <DishRow 
+                    <DishRow
                         key={dish._id}
                         id={dish._id}
                         name={dish.name}
