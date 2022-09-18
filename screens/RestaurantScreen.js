@@ -56,7 +56,7 @@ const RestaurantScreen = () => {
         });
     }, []);
 
-    console.log(dishes[0].name);
+    
 
     return (
         <>
