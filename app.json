@@ -2,6 +2,7 @@
   "expo": {
     "name": "deliveroo",
     "slug": "deliveroo",
+    "owner": "prensj",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -28,6 +29,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "c774c96d-f5f3-4270-82a0-c36584c1c1d8"
+      }
     }
   }
 }
