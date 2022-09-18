@@ -11,10 +11,12 @@ import {
 import { QuestionMarkCircleIcon } from 'react-native-heroicons/outline';
 import DishRow from '../components/DishRow';
 import BasketIcon from '../components/BasketIcon';
+import { useDispatch } from 'react-redux';
+import { setRestaurant } from '../features/restaurantSlice';
 
 const RestaurantScreen = () => {
     const navigation = useNavigation();
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     const {
         params: {
@@ -31,22 +33,22 @@ const RestaurantScreen = () => {
         },
     } = useRoute();
 
-    //   useEffect(() => {
-    //     dispatch(
-    //       setRestaurant({
-    //         id,
-    //         imgUrl,
-    //         title,
-    //         rating,
-    //         genre,
-    //         address,
-    //         short_description,
-    //         dishes,
-    //         long,
-    //         lat,
-    //       })
-    //     );
-    //   }, []);
+      useEffect(() => {
+        dispatch(
+          setRestaurant({
+            id,
+            imgUrl,
+            title,
+            rating,
+            genre,
+            address,
+            short_description,
+            dishes,
+            long,
+            lat,
+          })
+        );
+      }, []);
 
     useLayoutEffect(() => {
         navigation.setOptions({
